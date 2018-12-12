@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>Cafeterias BA</title>
+  <link href="../css/default.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="overlay">
+</div>
+  <!-- POP UP PARA LOGIN REGISTER -->
+  <div class="main-popup">
+  <div class="popup-header">
+    <div id="popup-close-button"><a href="#"></a></div>
+    <ul>
+      <li><a href="#" id="sign-in">Ingresar</a></li>
+      <li><a href="#" id="register">Registrarse</a></li>
+    </ul>
+  </div><!--.popup-header-->
+  
+  <div class="popup-content">
+    <form action="#" class="sign-in">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email">
+      <label for="contrasenia">Contrase&ntilde;a:</label>
+      <input type="password" id="password">
+      <input type="submit" class="submit" id="login" value="Ingresar">
+    </form>
+   
+    <form method='post' class="register">
+      <label for="nombre-register">Nombre de Usuario:</label>
+      <input type="text" name="nombre" id="nombre-register">
+      <label for="email-register">Email:</label>
+      <input type="email" name="email" id="email-register">
+      <label for="password-register">Contrase&ntilde;a:</label>
+      <input type="password" name="password" id="password-register">
+      <label for="password-confirmation">Confirmar Contrase&ntilde;a:</label>
+      <input type="password" name="password-confirmation" id="password-confirmation">
+      <input type="submit" class="submit" id="register-btn" value="Crear cuenta">
+    </form>
+  </div><!--.popup-content-->
+</div><!--.main-popup-->
+<!-- POP UP PARA LOGIN REGISTER -->
+  <div class="wrapper wrapper-page-bg">
+  <header class="top-fixed">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="navbar navbar-nav">
+          <li><a href="about_us.html">Qui&eacute;nes Somos?</a></li>
+          <li><a href="notas.html">Notas</a></li>
+          <li><a href="../index.html"><img src="../img/logo-elegido-byn.png" alt="logoCafeteriasBA"></a></li>
+          <li><a href="search.html">Buscar cafeter&eacute;as</a></li>
+          <li><a href="#" class="loginLink">Ingresar</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</div>
+<main>
+  <div class="page-bg">
+    <div class="page-bg-wrapper">
+      <h1>Relaj&aacute;te y le&eacute; nuestras Notas</h1>
+      <p>Enterate de las últimas noticias del cafe, de recetas nuevas y de mucho m&aacute;s.</p>
+    </div>
+  </div>
+  <section class="container">
+      <div class="row">
+          <div class="row">
+            <div class="row-header">
+              <h2>Listado completo de Notas</h2>
+            </div>
+          </div>
+        <article>
+          <div class="first-item">
+            <div>
+              <a href="verNota.html"><img src="../img/notes/note_1.jpg"></a>
+            </div>
+            <h3> Titulo Nota</h3>
+            <hr>
+            <div class="desc-recommended">
+              <p>Cafeteria: Cafeteria</p>
+              <p>Categoria: </p>
+              <a href="verNota.html">Leer Nota completa</a>
+            </div>
+          </div>
+          <div class="second-item">
+            <div>
+              <a href="verNota.html"><img src="../img/notes/note_1.jpg"></a>
+            </div>
+            <h3> Titulo Nota</h3>
+            <hr>
+            <div class="desc-recommended">
+              <p>Cafeteria: Cafeteria</p>
+              <p>Categoria: </p>
+              <a href="verNota.html">Leer Nota completa</a>
+            </div>
+          </div>
+          <div class="third-item">
+            <div>
+              <a href="verNota.html"><img src="../img/notes/note_1.jpg"></a>
+            </div>
+            <h3> Titulo Nota</h3>
+            <hr>
+            <div class="desc-recommended">
+              <p>Cafeteria: Cafeteria</p>
+              <p>Categoria: </p>
+              <a href="verNota.html">Leer Nota completa</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+</main>
+<footer class="footer-landing">
+    <div class="container">
+      <div class="logoCafeteriasBA">
+        <a href="../index.html"><img src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+      </div>
+      <div class="social-media">
+        <div>
+          <a href="https://www.facebook.com/cafeterias.ba" target="_blank">
+            <i class="fab fa-facebook-square"></i>
+        </a>
+      </div>
+      <div>
+        <a href="https://www.instagram.com/cafeteriasba/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+      <div class="copy">
+        <p>&copy; Cafeter&eacute;asBA 2018 - Hern&aacute;n Alonso - Escuela Davinci &reg;</p>
+      </div>
+    </div>
+  </footer>
+<script src="../js/ajax.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/register.js"></script>
+</body>
+</html>

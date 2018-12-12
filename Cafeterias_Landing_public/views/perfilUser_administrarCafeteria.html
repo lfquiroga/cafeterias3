@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>Cafeterias BA</title>
+  <link href="../css/default.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="overlay">
+</div>
+  <!-- POP UP PARA LOGIN REGISTER -->
+  <div class="main-popup">
+  <div class="popup-header">
+    <div id="popup-close-button"><a href="#"></a></div>
+    <ul>
+      <li><a href="#" id="sign-in">Ingresar</a></li>
+      <li><a href="#" id="register">Registrarse</a></li>
+    </ul>
+  </div><!--.popup-header-->
+  
+  <div class="popup-content">
+    <form action="../../Cafeterias_Landing_API/router-form.php" id="login-form" method="post" class="sign-in">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email">
+      <label for="contrasenia">Contrase&ntilde;a:</label>
+      <input type="password" id="password">
+      <input type="submit" class="submit" id="login" value="Ingresar">
+	  <p class="resetpsswrd">¿Olvidaste tu contrase&ntilde;a? Hac&eacute; <a href="mailto:info@cafeteriasba.com">click aqu&eacute;</a> para establecer una nueva.</p>
+	  </form>
+   
+    <form method="post" action="../../Cafeterias_Landing_API/router-form.php" id="register-form" class="register">
+      <label for="nombre-register">Nombre:</label>
+      <input type="text" name="nombre" id="nombre-register">
+      <label for="email-register">Email:</label>
+      <input type="email" name="email" id="email-register">
+      <label for="password-register">Contrase&ntilde;a:</label>
+      <input type="password" name="password" id="password-register">
+      <label for="password-confirmation">Confirmar Contrase&ntilde;a:</label>
+      <input type="password" name="password-confirmation" id="password-confirmation">
+      <input type="submit" class="submit" id="register-btn" value="Crear cuenta">
+    </form>
+  </div><!--.popup-content-->
+</div><!--.main-popup-->
+<!-- POP UP PARA LOGIN REGISTER -->
+	<div class="wrapper wrapper-page-bg">
+
+  
+  <header class="top-fixed" style="padding-top: 0px;"> 
+	<div class="topnav" id="myTopnav">
+	<div class="container1200max">
+	  <a class="logomainmnu" href="../index.php" ><img width="64" src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+	  <a class="navitem" href="../index.php">Home</a>
+	  <a class="navitem" href="about_us.html">Qui&eacute;nes Somos?</a>
+	  <a class="navitem" href="notas.html">Notas</a>
+	  <a class="navitem" href="search.html">Buscar cafeter&eacute;as</a>
+	  <a class="navitem" href="productos.html">Productos</a>	  
+	  <a class="usrmnbtns" title="Mi perfil" href="perfilUser.php">user@gmail.com</a>
+	  <a class="usrmnbtns" title="Desloguearse" href="#"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></a>
+	  <a class="usrmnbtns loginLink" title="Ingresar" href="#">Ingresar</a>
+	  <span class="clearflt"></span> 
+	  <a href="javascript:void(0);" class="iconRspnsv" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	  </a>
+	 </div>
+  </div>
+
+ 
+	
+  </header>   
+</div>
+<main>
+	<div class="page-bg">
+		<div class="page-bg-wrapper">
+			<h1>Perfil de usuario</h1>
+			<p>Aqu&eacute; podr&aacute;s editar tus datos personales y de tu cuenta.</p>
+		</div>
+	</div>
+
+<section class="container-dashboard">
+     <div class="" id="editarForm">
+	<div class="container1200max">
+	   <div class="col12">
+		  <nav aria-label="breadcrumb">
+						  <ol class="breadcrumb navegacionResumen">
+							<li class="breadcrumb-item"><a href="/public">Home</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="perfilUser.php">Perfil</a></li>
+							<li class="breadcrumb-item" aria-current="page">Administrar cafeter&eacute;a</li>
+						  </ol>
+			</nav>
+	    </div>
+		<div class="col2">
+			<div class="avatarcomment txtaligncenter">
+				<img class="imgvatarcomment" alt="Cafeter&eacute;as BA" src="../img/avatar-user.jpg">
+				<p class="txtaligncenter marginbottom0"><b>Juan Perez</b></p>
+				<p class="txtaligncenter marginbottom0 txtfichaavatarlabels">Fecha: 01/08/2018</p>
+				<p class="txtaligncenter txtfichaavatarlabels">Nivel: Novato</p>
+				<hr>
+				<ul class="usrmnperfillateral">
+					<a href="perfilUser.php"><li>Datos de usuario</li></a>
+					<a href="perfilUser_sugerirCafeteria.html"><li>Sugerir cafeter&eacute;a</li></a>
+					<!--  -->
+					<hr>
+					<h2>Cafeter&eacute;as</h2>
+					<a href="perfilUser_administrarCafeteria.html"><li class="selectedmnu">Administrar cafeter&eacute;a</li></a>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="col10">
+		<h2 class="titleformuseredit">Administrar cafeter&eacute;a</h2>
+		<p class="titleformuseredit">Administr&aacute; los datos de tu cafeter&eacute;a y sub&eacute; promociones.</p>
+		
+		
+		<!-- Este bloque va si el usuario aún no carg&oacute; su cafeter&eacute;a -->
+		<div class="addnewcafeteriausr">
+		<p class="titleformuseredit">Si ten&eacute;s una cafeter&eacute;a y quer&eacute;s publicarla en nuestra gu&eacute;a, simplemente ten&eacute;s que registrar los datos de la misma y luego de nuestra validaci&oacute;n aparecer&aacute; publicada en la p&aacute;gina.</p>
+		<p class="addnewcoffeshop"><a href="">Agregar cafeter&eacute;a <i class="fa fa-plus"></i></a></p>
+		</div>
+		<!-- Este bloque va si el usuario aún no carg&oacute; su cafeter&eacute;a -->
+
+		<!-- Este bloque tiene que aparecer si el usuario ya carg&oacute; su cafeter&eacute;a y quiere editar un dato -->		
+		<form class="editUsfrFormcontainer" action="../../Cafeterias_Landing_API/crud-router.php">
+			<div class="wrapper-form">
+				<div class="formitemscontainerleft">
+					<h3 class="sbutitleformperfil">Datos de la cafeteria</h3>	
+					<label class="labelformPerfil">Nombre de la cafeter&eacute;a: <input name="nombre" value="ALL SAINTS CAFÉ" type="text"></label>
+					<label class="labelformPerfil">Visibilidad de la cafeteria: 
+						<select name="rol" class="select-crud">
+							<option value="1">Visible</option>
+							<option value="2">Ocultar</option>
+						</select>
+					</label>
+					<br>					
+					<label class="labelformPerfil">Bajada t&eacute;tulo cafeter&eacute;a: <input name="nombre" value="Especialistas en caf&eacute; y un ambiente único" type="text"></label>
+					<label class="labelformPerfil">Zona: <input name="apellido" value="Belgrano" type="text"></label>
+					<label class="labelformPerfil">Direcci&oacute;n: <input name="apellido" value="Ciudad de La Paz 2300" type="text"></label>
+					<label class="labelformPerfil">Horario de atenci&oacute;n: <input name="nombre" value="Lunes a viernes de 9:00 a 20:00 S&aacute;bados de 10:00 a 18:00 Domingos: cerrado" type="text"></label>					
+					<label class="labelformPerfil">Servicios disponibles: </label>
+					<label class="checksformperfil">Wifi <input type="checkbox" name="wifi" value="wifi" checked></label>
+					<label class="checksformperfil">Tarjetas <input type="checkbox" name="tarjetas" value="Tarjetas" checked></label>
+					<label class="checksformperfil">Para llevar <input type="checkbox" name="delivery" value="Delivery" checked></label>
+					<label class="labelformPerfil">Informaci&oacute;n de bloque de contenido principal:
+					<textarea class="txtareaperfilusr" placeholder="" rows="7">All Saints Caf&eacute; cree en la calidad sobre todas las cosas. Compran directamente a peque&ntilde;os podructores cafeteros alrededor del mundo. El caf&eacute; utilizado proviene de microlotes de origen único, en lo posible org&aacute;nicos y sustentables, de la mas alta calidad puntuados en cata de 84 puntos en adelante. El caf&eacute; es tostado siguiendo los m&aacute;s rigurosos st&aacute;ndares de calidad. El resultado se disfruta en cada taza. Cuentan con una m&aacute;quina de tostar caf&eacute; Probat Roadster, marca m&aacute;s antigua y lider en el segmento de torrefacci&oacute;n y microtorrefacci&oacute;n. De origen aleman, es utilizada por los principales speciality coffee shops del mundo.
+					</textarea>
+					</label>
+					<label class="labelformPerfil">T&eacute;tulo - Bloque secundario: <input name="apellido" value="CURSOS ESPECIALIZADOS DICTADOS POR SUS PROPIOS BARISTAS" type="text"></label>
+					<label class="labelformPerfil">Informaci&oacute;n de bloque de contenido secundario:
+					<textarea class="txtareaperfilusr" placeholder="" rows="7">All Saints Caf&eacute; cree en la calidad sobre todas las cosas. Compran directamente a peque&ntilde;os podructores cafeteros alrededor del mundo. El caf&eacute; utilizado proviene de microlotes de origen único, en lo posible org&aacute;nicos y sustentables, de la mas alta calidad puntuados en cata de 84 puntos en adelante. El caf&eacute; es tostado siguiendo los m&aacute;s rigurosos st&aacute;ndares de calidad. El resultado se disfruta en cada taza. Cuentan con una m&aacute;quina de tostar caf&eacute; Probat Roadster, marca m&aacute;s antigua y lider en el segmento de torrefacci&oacute;n y microtorrefacci&oacute;n. De origen aleman, es utilizada por los principales speciality coffee shops del mundo.
+					</textarea>
+					</label>
+					<hr class="lineseparationsilver">
+					<h3 class="sbutitleformperfil">Im&aacute;genes de la cafeter&eacute;a</h3>
+					<label class="labelformPerfil">Imagen 1: <input type="file" name="archivo[]"></label>
+					<label class="labelformPerfil">Imagen 2: <input type="file" name="archivo[]"></label>
+					<label class="labelformPerfil">Imagen 3: <input type="file" name="archivo[]"></label>
+					<label class="labelformPerfil">Imagen 4: <input type="file" name="archivo[]"> </label>
+					<label class="labelformPerfil">Imagen 5: <input type="file" name="archivo[]"> </label>
+					
+					<hr class="lineseparationsilver">
+					<h3 class="sbutitleformperfil">Promociones vigentes</h3>
+					<label class="labelformPerfil">Texto promo 1: <input name="nombre" value="Descuento en desayunos" type="text"></label>
+					<label class="labelformPerfil">Imagen Promo 1: <input type="file" name="archivo[]"></label>
+					<label class="labelformPerfil">Visibilidad de la promo 1: 
+					<select name="rol" class="select-crud">
+						<option value="1">Visible</option>
+						<option value="2">Ocultar</option>
+					</select>
+					</label>
+					<br>
+					<label class="labelformPerfil">Texto promo 2: <input name="nombre" value="Promo 2X1 en meriendas" type="text"></label>					
+					<label class="labelformPerfil">Imagen Promo 2: <input type="file" name="archivo[]"></label>	
+					<label class="labelformPerfil">Visibilidad de la promo 2: 
+						<select name="rol" class="select-crud">
+							<option value="1">Visible</option>
+							<option value="2">Ocultar</option>
+						</select>
+						</label>
+						<br>					
+				</div>	
+				</div>
+				<div class="btnformPerfil">
+					<div class="divButton">
+							<input class="stylesbuttongenerals" type="submit" value="Guardar cambios">
+					</div>
+				</div>
+			</form>		
+		<!-- Este bloque tiene que aparecer si el usuario ya carg&oacute; su cafeter&eacute;a y quiere editar un dato -->				
+		</div>	  
+	  
+	  <div class="clearflt"></div>
+	
+	</div>
+	
+	</div>
+
+		
+    </section>	
+	
+	
+	
+</main>
+<footer class="footer-landing">
+    <div class="container">
+      <div class="logoCafeteriasBA">
+        <a href="../index.php"><img src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+      </div>
+      <div class="social-media">
+        <div>
+          <a href="https://www.facebook.com/cafeterias.ba" target="_blank">
+            <i class="fab fa-facebook-square"></i>
+        </a>
+      </div>
+      <div>
+        <a href="https://www.instagram.com/cafeteriasba/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+      <div class="copy">
+        <p>&copy; Cafeter&eacute;as BA 2018 &reg;</p>
+      </div>
+    </div>
+  </footer>
+<script src="../js/ajax.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/register.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

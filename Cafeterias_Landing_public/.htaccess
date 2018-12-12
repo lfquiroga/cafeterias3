@@ -1,0 +1,26 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^(www.)?cafeteriasba.com$
+
+RewriteCond %{REQUEST_URI} !^/Cafeterias_Landing_public/
+
+# NO cambiar esta línea
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /Cafeterias_Landing_public/$1
+
+RewriteCond %{HTTP_HOST} ^(www.)?cafeteriasba.com$
+RewriteRule ^(/)?$ Cafeterias_Landing_public/index.php [L] 
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+#   Reescribir la URL solicitada por el usuario
+
+
+#   Producto
+#   Entrada: producto/NOMBRE_PRODUCTO/
+#   Salida: productos.php?id=NOMBRE_PRODUCTO
+RewriteRule ^views/verCafeteria/(.*)$  views/verCafeteria.php?id=$1 [L]

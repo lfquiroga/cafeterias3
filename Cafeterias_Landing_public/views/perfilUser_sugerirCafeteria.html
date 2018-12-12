@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>Cafeterias BA</title>
+  <link href="../css/default.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="overlay">
+</div>
+  <!-- POP UP PARA LOGIN REGISTER -->
+  <div class="main-popup">
+  <div class="popup-header">
+    <div id="popup-close-button"><a href="#"></a></div>
+    <ul>
+      <li><a href="#" id="sign-in">Ingresar</a></li>
+      <li><a href="#" id="register">Registrarse</a></li>
+    </ul>
+  </div><!--.popup-header-->
+  
+  <div class="popup-content">
+    <form action="../../Cafeterias_Landing_API/router-form.php" id="login-form" method="post" class="sign-in">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email">
+      <label for="contrasenia">Contrase&ntilde;a:</label>
+      <input type="password" id="password">
+      <input type="submit" class="submit" id="login" value="Ingresar">
+	  <p class="resetpsswrd">¿Olvidaste tu contrase&ntilde;a? Hac&eacute; <a href="mailto:info@cafeteriasba.com">click aqu&eacute;</a> para establecer una nueva.</p>
+	  </form>
+   
+    <form method="post" action="../../Cafeterias_Landing_API/router-form.php" id="register-form" class="register">
+      <label for="nombre-register">Nombre:</label>
+      <input type="text" name="nombre" id="nombre-register">
+      <label for="email-register">Email:</label>
+      <input type="email" name="email" id="email-register">
+      <label for="password-register">Contrase&ntilde;a:</label>
+      <input type="password" name="password" id="password-register">
+      <label for="password-confirmation">Confirmar Contrase&ntilde;a:</label>
+      <input type="password" name="password-confirmation" id="password-confirmation">
+      <input type="submit" class="submit" id="register-btn" value="Crear cuenta">
+    </form>
+  </div><!--.popup-content-->
+</div><!--.main-popup-->
+<!-- POP UP PARA LOGIN REGISTER -->
+	<div class="wrapper wrapper-page-bg">
+   
+  <header class="top-fixed" style="padding-top: 0px;"> 
+	<div class="topnav" id="myTopnav">
+	<div class="container1200max">
+	  <a class="logomainmnu" href="../index.php" ><img width="64" src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+	  <a class="navitem" href="../index.php">Home</a>
+	  <a class="navitem" href="about_us.html">Qui&eacute;nes Somos?</a>
+	  <a class="navitem" href="notas.html">Notas</a>
+	  <a class="navitem" href="search.html">Buscar cafeter&eacute;as</a>
+	  <a class="navitem" href="productos.html">Productos</a>	  
+	  <a class="usrmnbtns" title="Mi perfil" href="perfilUser.php">user@gmail.com</a>
+	  <a class="usrmnbtns" title="Desloguearse" href="#"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></a>
+	  <a class="usrmnbtns loginLink" title="Ingresar" href="#">Ingresar</a>
+	  <span class="clearflt"></span> 
+	  <a href="javascript:void(0);" class="iconRspnsv" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	  </a>
+	 </div>
+  </div>
+
+ 
+	
+  </header>   
+</div>
+<main>
+	<div class="page-bg">
+		<div class="page-bg-wrapper">
+			<h1>Perfil de usuario</h1>
+			<p>Aqu&eacute; podr&aacute;s editar tus datos personales y de tu cuenta.</p>
+		</div>
+	</div>
+
+<section class="container-dashboard">
+     <div class="" id="editarForm">
+	  
+	<div class="container1200max">
+		   <div class="col12">
+		  <nav aria-label="breadcrumb">
+						  <ol class="breadcrumb navegacionResumen">
+							<li class="breadcrumb-item"><a href="/public">Home</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="perfilUser.php">Perfil</a></li>
+							<li class="breadcrumb-item" aria-current="page">Sugerir cafeter&eacute;a</li>
+						  </ol>
+			</nav>
+	    </div>			  
+		<div class="col2">
+			<div class="avatarcomment txtaligncenter">
+				<img class="imgvatarcomment" alt="Cafeter&eacute;as BA" src="../img/avatar-user.jpg">
+				<p class="txtaligncenter marginbottom0"><b>Juan Perez</b></p>
+				<p class="txtaligncenter marginbottom0 txtfichaavatarlabels">Fecha: 01/08/2018</p>
+				<p class="txtaligncenter txtfichaavatarlabels">Nivel: Novato</p>
+				<hr>
+				<ul class="usrmnperfillateral">
+					<a href="perfilUser.php"><li>Datos de usuario</li></a>
+					<a href="perfilUser_sugerirCafeteria.html"><li class="selectedmnu">Sugerir cafeter&eacute;a</li></a>
+					<hr>
+					<h2>Cafeter&eacute;as</h2>
+					<a href="perfilUser_administrarCafeteria.html"><li>Administrar cafeter&eacute;a</li></a>
+				</ul>	
+			</div>
+		</div>
+		
+		<div class="col10">
+		<h2 class="titleformuseredit">Sugerir cafeter&eacute;a</h2>
+		<p class="titleformuseredit">Suger&eacute; tu cafeter&eacute;a favorita para que la incluyamos en nuestra gu&eacute;a.</p>
+		<form class="editUsfrFormcontainer" action="../../Cafeterias_Landing_API/crud-router.php">
+			<div class="wrapper-form">
+				<div class="formitemscontainerleft">
+					<label class="labelformPerfil">Nombre de la cafeter&eacute;a: <input name="nombre" type="text"></label>
+					<label class="labelformPerfil">Direcci&oacute;n: <input name="apellido" type="text"></label>
+					<label class="labelformPerfil">Descripci&oacute;n / Informaci&oacute;n adicional:
+					<textarea class="txtareaperfilusr" placeholder="" rows="7"></textarea>
+					</label>
+				</div>	
+				</div>
+				<div class="btnformPerfil">
+					<div class="divButton">
+							<input class="stylesbuttongenerals" type="submit" value="Sugerir cafeter&eacute;a">
+					</div>
+				</div>
+			</form>			
+		</div>	  
+	  
+	  <div class="clearflt"></div>
+	
+	</div>
+	
+	</div>
+
+		
+    </section>	
+	
+	
+	
+</main>
+<footer class="footer-landing">
+    <div class="container">
+      <div class="logoCafeteriasBA">
+        <a href="../index.php"><img src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+      </div>
+      <div class="social-media">
+        <div>
+          <a href="https://www.facebook.com/cafeterias.ba" target="_blank">
+            <i class="fab fa-facebook-square"></i>
+        </a>
+      </div>
+      <div>
+        <a href="https://www.instagram.com/cafeteriasba/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+      <div class="copy">
+        <p>&copy; Cafeter&eacute;as BA 2018 &reg;</p>
+      </div>
+    </div>
+  </footer>
+<script src="../js/ajax.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/register.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>
