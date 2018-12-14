@@ -19,22 +19,22 @@ class Conexion
 		{
 				$host = "localhost";
 				//local
-                                //$user = "root";
+                                $user = "root";
 				
                                 //online
-                                $user = "cafeteri";
+                                //$user = "cafeteri";
                                 
                                 //local
-				//$pass = "";
+				$pass = "";
                                 
                                 //online
-				$pass = "Co230Fv4hn!!!!";
+				//$pass = "Co230Fv4hn!!!!";
                                 
                                 //local
-				//$base = "cafeteriasba";
+				$base = "cafeteri_cafeteriasba";
                                
 				//online
-                                $base = "cafeteri_cafeteriasba";
+                                //$base = "cafeteri_cafeteriasba";
                                 
 				$dsn = "mysql:host=$host;dbname=$base;charset=utf8";
 

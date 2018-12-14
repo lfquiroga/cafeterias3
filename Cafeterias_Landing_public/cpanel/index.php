@@ -4,6 +4,7 @@ session_start();
 if(isset($_SESSION['Rol'])){
 
     include_once '../views/menu_panel.php';
+    
 }else{
     
     header('Location: ../index.php');

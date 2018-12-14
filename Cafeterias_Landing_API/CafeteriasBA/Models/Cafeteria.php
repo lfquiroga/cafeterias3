@@ -23,6 +23,7 @@ class Cafeteria implements JsonSerializable, ICafeteria {
     protected $votos;
     protected $status;
     protected $descripcion;
+    protected $img_portada;
 
     /**
      * Cafeteria constructor.
@@ -50,6 +51,7 @@ class Cafeteria implements JsonSerializable, ICafeteria {
             'votos' => $this->votos,
             'status' => $this->status,
             'descripcion' => $this->descripcion,
+            'img_portada' => $this->img_portada,
         ];
     }
 
@@ -85,6 +87,7 @@ class Cafeteria implements JsonSerializable, ICafeteria {
         $this->setVotos($fila['votos']);
         $this->setStatus($fila['status']);
         $this->setDescripcion($fila['descripcion']);
+        $this->setImgPortada($fila['img_portada']);
     }
 
     /**
@@ -93,13 +96,20 @@ class Cafeteria implements JsonSerializable, ICafeteria {
     public static function getAll() {
         // TODO: Implement getAll() method.
         $query = "SELECT * FROM t_cafeteria WHERE status = 'activo'";
+        
         $stmt = Conexion::getStatement($query);
+        
         $stmt->execute();
+        
         while ($fila = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            
             $cafeteria = new Cafeteria();
+            
             $cafeteria->LoadData($fila);
+            
             $salida[] = $cafeteria;
         }
+        var_dump($salida);
         return $salida;
     }
 
@@ -473,6 +483,20 @@ class Cafeteria implements JsonSerializable, ICafeteria {
      */
     public function setdescripcion($descripcion) {
         $this->descripcion = $descripcion;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getimg_portada() {
+        return $this->img_portada;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setImgPortada($img_portada) {
+        $this->descripcion = $img_portada;
     }
 
 }

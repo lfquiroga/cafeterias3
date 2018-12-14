@@ -59,12 +59,20 @@ include_once './header-public.php';
             </div>
           </div>
         
+        <!-- ACA INSERTA LA LISTA-->
         <article id="listado">
          
         </article>
+        
+        <!-- ACA PODRIA SER -->
+        <div id="paginador"></div>
+        
       </div>
     </section>
 </main>
+<div class="ver_mas">
+    
+</div>
 <footer class="footer-landing">
     <div class="container">
       <div class="logoCafeteriasBA">

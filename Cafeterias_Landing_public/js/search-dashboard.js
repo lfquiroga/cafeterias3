@@ -10,7 +10,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
 	ajax({
           
-            url: '../Cafeterias_Landing_API/router-search.php',
+            url: prePath+'Cafeterias_Landing_API/router-search.php',
+            //WEBurl: '../Cafeterias_Landing_API/router-search.php',
             method: 'GET',
             successCallback: function(rta){
               
@@ -21,7 +22,7 @@ window.addEventListener("DOMContentLoaded", function () {
            $.each(rankingData, function( index, value ) {
             
               contenido ='\
-              <div class="first-item"> <div>\n\
+              <div class="first-item" id="cafeteria_'+index+'" style="display:none;"> <div>\n\
               <a href="verCafeteria.php?id='+value.id+'">\n\
               <img src="img/cafeterias/cafe_'+index+'.jpg"></a></div>\n\
               <h3>#'+(index+1)+' '+value.nombre+'</h3><hr><div class="desc-recommended">\n\
@@ -33,15 +34,31 @@ window.addEventListener("DOMContentLoaded", function () {
               $('#listado').append(contenido);
               });
               
+              paginas = Math.round(contador/9);
               
-            },
-            errorCallback: function (rta) {
+              for(i=1;i < paginas ;i++){
+                
+              var desde=(i*9);
+              var hasta=desde+8;
+
+             pagina='<button  onclick="ver_mas(\'cafeteria_\','+desde+','+hasta+', \'ver_mas\')"  class="paginar" type="button" id="'+desde+'_'+hasta+'">'+(i)+'</button>';
+                  
+              $('#listado').append(pagina);
+
+              }
+
+              ver_mas('cafeteria_', 1,9, 'ver_mas' );
+              
+            },errorCallback: function (rta) {
 
               alert(rta);
             }
         });
         
         
+        /**
+         * boton buscar
+         */
     var buscar = $s('#buscar_cafeteria');
     
     buscar.addEventListener("submit", function (e) {  
@@ -75,9 +92,9 @@ window.addEventListener("DOMContentLoaded", function () {
         contador=0;
         
          $.each(e, function( index, value ) {
-            
+
               contenido_busqueda =contenido_busqueda+'\
-              <div class="first-item"> <div>\n\
+              <div class="first-item" > <div>\n\
               <a href="verCafeteria.php?id='+value.id+'">\n\
               <img src="img/cafeterias/cafe_'+index+'.jpg"></a></div>\n\
               <h3>#'+(index+1)+' '+value.nombre+'</h3><hr><div class="desc-recommended">\n\
@@ -96,5 +113,7 @@ window.addEventListener("DOMContentLoaded", function () {
       })
 
     });
-
+    
+    
+  
 });
