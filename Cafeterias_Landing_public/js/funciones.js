@@ -71,16 +71,30 @@ function armarRanking(numRanking){
  * @returns {css}
  */
  
-function ver_mas(id , desde ,hasta,class_vermas){ 
+function ver_mas(id , desde ,hasta,class_vermas ){ 
+  
+ocultar('first-item');
   
   for(i=desde;i<=hasta;i++){
     
-    $('#'+id+i).css('display','block');
+  $('#'+id+i).css('display','block');
     
   }
   
   $('.'+class_vermas).attr('id', '');
   $('.'+class_vermas).attr('id', hasta);
+  
+}
+
+/**
+ * 
+ * @param string class_ocultar
+ * @returns {undefined}
+ */
+function ocultar(class_ocultar){ 
+
+  $('.'+class_ocultar).css('display','none');
+
   
 }
 

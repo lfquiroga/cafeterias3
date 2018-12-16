@@ -62,13 +62,17 @@ include_once './header-public.php';
         <article id="listado">
          
         </article>
+		
+		<!-- PAGINADOR -->
+		<div id="paginador"></div>
+		
       </div>
     </section>
 </main>
 <footer class="footer-landing">
     <div class="container">
       <div class="logoCafeteriasBA">
-        <a href="../index.php"><img src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+        <a href="../index.php"><img src="../img/logoCafeteriasBAb.svg" alt="logoCafeteriasBA"></a>
       </div>
       <div class="social-media">
         <div>

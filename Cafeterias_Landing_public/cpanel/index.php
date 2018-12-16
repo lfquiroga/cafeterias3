@@ -52,7 +52,7 @@ if(isset($_SESSION['Rol'])){
 <footer class="footer-landing">
     <div class="container">
       <div class="logoCafeteriasBA">
-        <a href="../index.html"><img src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+        <a href="../index.html"><img src="../img/logoCafeteriasBAb.svg" alt="logoCafeteriasBA"></a>
       </div>
       <div class="social-media">
         <div>
@@ -72,6 +72,7 @@ if(isset($_SESSION['Rol'])){
     </div>
   </footer>
 <script src="../js/ajax.js"></script>
+    <script src="../js/nav.js"></script>
 <script src="../js/funciones.js"></script>
 <script src="../js/cafeterias-dashboard.js"></script>
 <script src="../js/productos-dashboard.js"></script>

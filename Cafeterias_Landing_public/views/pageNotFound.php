@@ -137,7 +137,7 @@ session_start();
 <footer class="footer-landing">
     <div class="container">
       <div class="logoCafeteriasBA">
-        <a href="../index.php"><img src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+        <a href="../index.php"><img src="../img/logoCafeteriasBAb.svg" alt="logoCafeteriasBA"></a>
       </div>
       <div class="social-media">
         <div>

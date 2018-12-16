@@ -30,7 +30,7 @@ include_once './header-public.php';
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb navegacionResumen">
               <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-              <li class="breadcrumb-item"><a href="search.php">Cafeter&eacute;as</a></li>
+              <li class="breadcrumb-item"><a href="search.php">Cafeter&iacute;as</a></li>
               <li class="breadcrumb-item" aria-current="page">Especialidad</li>
             </ol>
           </nav>
@@ -212,25 +212,41 @@ include_once './header-public.php';
                       
                       <form action="../../Cafeterias_Landing_API/cafeterias-router.php"  action="POST" id="insertcomentario">
                         <div class="textareaW" name="comentario">
-                          <textarea id="comentario" placeholder="Escribi una rese&ntilde;a sobre tu experiencia en esta cafeteria. Que cosa probaste? que fue lo que mas te gusto?" rows="7"></textarea>
+                          <textarea id="comentario" placeholder="Escribi una rese&ntilde;a sobre tu experiencia en esta cafeteria. Que cosa probaste? que fue lo que mas te gusto?" rows="5"></textarea>
                           <p id="error_comen"></p>
                         </div>
                         <div class="califyprecio">
-                          <p class="starasignbox"><b>Asign&aacute; una calificaci&oacute;n:</b> 
-                          <!--  <i class="starspoints far fa-star"></i>
-                            <i class="starspoints far fa-star"></i>
-                            <i class="starspoints far fa-star"></i>
-                            <i class="starspoints far fa-star"></i>
-                            <i class="starspoints far fa-star"></i>
-                           
-                          @FIXME hacer el js para que sea con estrellas -->
-                            <select name="calificacion" id="calificacion">
+						
+						
+
+						
+						
+						
+
+						
+			
+						
+                          <p class="starasignbox"><b>Asign&aacute; una calificaci&oacute;n:</b> 					
+
+							<div class="rating" role="optgroup" style="text-align:left;">
+							  <!-- in Rails just use 1.upto(5) -->  
+							  <i class="far fa-star fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0" aria-label="Rate as one out of 5 stars" role="radio"></i>
+							  <i class="far fa-star fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0" aria-label="Rate as two out of 5 stars" role="radio"></i>
+							  <i class="far fa-star fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0" aria-label="Rate as three out of 5 stars" role="radio"></i>
+							  <i class="far fa-star fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0" aria-label="Rate as four out of 5 stars" role="radio"></i>
+							  <i class="far fa-star fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0" aria-label="Rate as five out of 5 stars" role="radio"></i>
+							</div>							
+						
+							     <!-- hide the input -->  						
+						<input style="display:none;" type="number" name="calificacion" id="calificacion" min="1" max="5" />
+                         <!-- @FIXME hacer el js para que sea con estrellas -->
+                            <!--  select name="calificacion" id="calificacion">
                               <option value="1">1</option>
                               <option value="2">2</option>
                               <option value="3">3</option>
                               <option value="4">4</option>
                               <option value="5">5</option>
-                            </select></p>
+                            </select --></p>
 
      <!--<p><b>A&ntilde;adir foto a la rese&ntilde;a: </b><input class="loadimgs" placeholder="" name="myFile" type="file">-->
                           <div class="boxbtnvmas">
@@ -238,7 +254,7 @@ include_once './header-public.php';
 
                             <div class="normal-search">
                               <div class="paddingleft0 width250">
-                                <button id="search-input" type="submit" class="searchbarbutton heightsearch">Cargar Rese&ntilde;a</button>
+                                <button id="search-input" data-href='#commentsgroup' type="submit" class="searchbarbutton heightsearch">Cargar Rese&ntilde;a</button>
                               </div>
                             </div>
 
@@ -277,7 +293,7 @@ include_once './header-public.php';
 <footer class="footer-landing">
   <div class="container">
     <div class="logoCafeteriasBA">
-      <a href="../index.php"><img src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+      <a href="../index.php"><img src="../img/logoCafeteriasBAb.svg" alt="logoCafeteriasBA"></a>
     </div>
     <div class="social-media">
       <div>
@@ -297,6 +313,72 @@ include_once './header-public.php';
   </div>
 </footer>
 
+
+
+							
+<script>
+$(document).ready(function () {
+  
+  function setRating(rating) {
+    $('#calificacion').val(rating);
+    // fill all the stars assigning the '.selected' class
+    //$('.rating-star').removeClass('far').addClass('selected');
+    // empty all the stars to the right of the mouse
+    $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('selected').addClass('far');
+  }
+  
+  $('.rating-star')
+  .on('mouseover', function(e) {
+    var rating = $(e.target).data('rating');
+    // fill all the stars
+    $('.rating-star').removeClass('far').addClass('fas');
+    // empty all the stars to the right of the mouse
+    $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('fas').addClass('far');
+	
+	  var rating = $(e.target).data('rating');
+    setRating(rating);
+	
+	
+  })
+  /*
+  .on('mouseleave', function (e) {
+    // empty all the stars except those with class .selected
+    $('.rating-star').removeClass('fas').addClass('far');
+  })
+  */
+  .on('click', function(e) {
+    var rating = $(e.target).data('rating');
+    setRating(rating);
+  })
+  .on('keyup', function(e){
+    // if spacebar is pressed while selecting a star
+    if (e.keyCode === 32) {
+      // set rating (same as clicking on the star)
+      var rating = $(e.target).data('rating');
+      setRating(rating);
+    }
+  });
+});
+
+
+$("#search-input").click(function() {
+    // empty all the stars except those with class .selected
+    $('.rating-star').removeClass('fas').addClass('far');
+	
+	
+	
+            var div = $(this).data('href');
+            var y = $(div).offset().top - 50;
+            $('body,html').stop(true,true).animate({                                
+                scrollTop: y
+            },1000);	
+	
+	
+});
+
+
+
+</script>
 
 <script src="../js/ajax.js"></script>
 <script src="../js/funciones.js"></script>
