@@ -1,5 +1,5 @@
-<?php
-require 'autoload.php';
-use \CafeteriasBA\Controllers\CafeteriaController;
-
-CafeteriaController::getRanking();
+<?php
+require 'autoload.php';
+use \CafeteriasBA\Controllers\CafeteriaController;
+
+CafeteriaController::getRanking();

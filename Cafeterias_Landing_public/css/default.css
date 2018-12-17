@@ -839,11 +839,10 @@ form.register.move-left {
   text-align: center;
   box-shadow: 0 0 4px #ccc;
 }
-#listado-dashboard tr{/*line-height:3.5;*/border-spacing : 0;}
-#listado-dashboard td{padding-top:5px;padding-bottom:5px;border-bottom:solid 1px #f2f2f2; border-spacing : 0 0;border-spacing : 0;
-border-collapse : collapse;} 
-#listado-dashboard th{padding-top:10px;padding-bottom:10px;border-spacing : 0 0;border-spacing : 0;
-border-collapse : collapse;} 
+#listado-dashboard tr{/*line-height:3.5;*/}
+#listado-dashboard td{padding-top:5px;padding-bottom:5px;border-bottom:solid 1px #f2f2f2;} 
+#listado-dashboard th{padding-top:10px;padding-bottom:10px;} 
+.width10percnt{width:10%;}
 .width15percnt{width:15%;}
 .width20percnt{width:20%;}
 .width30percnt{width:30%;}
