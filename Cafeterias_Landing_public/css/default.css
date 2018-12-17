@@ -847,6 +847,10 @@ form.register.move-left {
 .width20percnt{width:20%;}
 .width30percnt{width:30%;}
 .width40percnt{width:40%;}
+#listado-dashboard .fas{
+display: unset!important;
+}
+
 #headerTable th
 {
     font-size: 1.125rem;
