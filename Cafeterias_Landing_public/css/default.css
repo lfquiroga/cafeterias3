@@ -1644,6 +1644,15 @@ button:hover { outline:0 !important; }
 
 /**************************************** Perfil user ******************************************/
 
+#personal_form
+{
+    visibility: visible;
+}
+
+#sugerir_form
+{
+    visibility: hidden;
+}
 
 /**************************************** Paginador styles ******************************************/
 
