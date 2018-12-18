@@ -535,14 +535,35 @@ window.addEventListener("DOMContentLoaded",function(){
             url: '../../Cafeterias_Landing_API/sugerencia-router.php',
 
             successCallback: function(rta){
+                pMensaje = document.createElement('p');
 
+                
+                if(JSON.parse(rta).status == 0)
+                {
+                    flagCrud = true;
+
+                    crudForm.innerHTML = "";
+
+                    tablaDashboard.className = "listado-oculto";
+
+                    tableHeader.className = "listado-oculto";
+
+                    pMensaje.innerHTML = 'No registramos ninguna sugerencia por parte de los usuarios en estos momentos. A penas se realize una, se mostrarán aquí.';
+
+                    divContainer.appendChild(pMensaje);
+
+
+                }else
+                {
+
+                pMensaje.innerHTML = '';
                 flagCrud = true;
 
                 crudForm.innerHTML = "";
 
                 tablaDashboard.className = "";
 
-                let arrayCafeterias = JSON.parse(rta);
+                let arrayCafeterias = JSON.parse(rta).data;
 
                 // Agregar un flag para saber si esta cargada o no, y para saber si borrar en otros clicks de tablas o no
 
@@ -601,9 +622,15 @@ window.addEventListener("DOMContentLoaded",function(){
 
                 }
 
-                assignIDShow();
+                    assignIDShow();
+                }
+            
 
             }
+
+                
+
+            
 
         });
 
