@@ -17,7 +17,7 @@ if(isset($_SESSION['Rol'])){
 	<div class="page-bg">
 		<div class="page-bg-wrapper">
 			<h1>Dashboard</h1>
-			<p>Gestionamiento de datos. Cuenta:<?php
+			<p>Gesti&#243;n de datos. Cuenta:<?php
         echo $_SESSION['Usuario'];
         ?> </p>
 		</div>
