@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function () {
         cafeteriadata = (cafeteria.data[0]);
 
         //armo el contenido para el div con class contFichacafe
-    
+
         contfichacafe = '<p><b>Zona:</b> ' + cafeteriadata.sucursal + '</p>\n\
                       <p class="starshowheader"><b>Calificaci&oacute;n:</b>' + armarRanking(cafeteriadata.valoracion) + '</p>\n\
                       <p> <span class="iconservicios"><i class="fa fa-wifi" aria-hidden="true"></i> Wifi</span>\n\
@@ -47,18 +47,18 @@ window.addEventListener("DOMContentLoaded", function () {
         $('#descripcion').html(cafeteriadata.descripcion.replace(/\n/g, "<br />"));
         $('.horarios').html(horarios);
         $('#titulo').html(cafeteriadata.nombre);
-        
+
         var mapa = document.querySelector('.mapavercafeteria');
-		
-		if(cafeteriadata.coordenadas_maps != '')
+
+        if (cafeteriadata.coordenadas_maps != '')
         {
           mapa.src = cafeteriadata.coordenadas_maps;
-		  
-        }else
+
+        } else
         {
           mapa.src = '../img/error-mapa.jpg';
         }
-       // mapa.src = cafeteriadata.coordenadas_maps;
+        // mapa.src = cafeteriadata.coordenadas_maps;
 
       } else {
         window.location = 'pageNotFound.php';
@@ -86,33 +86,33 @@ window.addEventListener("DOMContentLoaded", function () {
 
   let datamenu = JSON.stringify(dataUnParsedmenu);
 
-  contenido_menus='';
+  contenido_menus = '';
 
   ajax({
     method: 'POST',
     url: prePath + 'Cafeterias_Landing_API/cafeterias-router.php',
     data: datamenu,
     successCallback: function (rta) {
-      
-      let menus = JSON.parse(rta);
-      
-      if(menus != null){
-      $.each(menus, function (index, value) {
 
-      contenido=' <div class="col6">\n\
+      let menus = JSON.parse(rta);
+
+      if (menus != null) {
+        $.each(menus, function (index, value) {
+
+          contenido = ' <div class="col6">\n\
             <div class="promosC">\n\
               <div class="promoContainer">\n\
-                  <div class="txtPromo"><h4>'+value.nombre+'</h4></div>\n\
-                \n\<div class="descripcionPromo"><p>'+value.descripcion+'</p></div>\n\
-                \n\<div class="precioPromo"><p class="valorprecio">PRECIO $'+value.precio+'</p></div>\n\
+                  <div class="txtPromo"><h4>' + value.nombre + '</h4></div>\n\
+                \n\<div class="descripcionPromo"><p>' + value.descripcion + '</p></div>\n\
+                \n\<div class="precioPromo"><p class="valorprecio">PRECIO $' + value.precio + '</p></div>\n\
                 </div>\n\
               </div>\n\
             </div>';
-        
-        $('#promos').append(contenido);
-      });
-      }else{
-        $('#promos').css('display','none');
+
+          $('#promos').append(contenido);
+        });
+      } else {
+        $('#promos').css('display', 'none');
       }
     }
   });
@@ -145,6 +145,9 @@ window.addEventListener("DOMContentLoaded", function () {
       };
 
       let data = JSON.stringify(dataUnParsed);
+
+
+
       ajax({
 
         method: 'POST',
@@ -152,13 +155,40 @@ window.addEventListener("DOMContentLoaded", function () {
         data: data,
         successCallback: function (rta) {
 
+
+          let errores_form = JSON.parse(rta);
+
+
+          if (typeof errores_form.errores.comentario !== 'undefined') {
+            $('#error_comen').append(errores_form.errores.comentario[0]);
+          } else {
+            $('#error_comen').html('');
+          }
+
+          if (typeof errores_form.errores.calificacion !== 'undefined' || typeof errores_form.errores.calificacion !== 'undefined') {
+
+            if (typeof errores_form.errores.calificacion !== 'undefined') {
+              $('#error_cali').append('Debes escoger una calificacion.');
+            } else {
+              $('#error_cali').html('');
+            }
+            
+          } else{
+            
           if (data && id) {
+            
+            $('#comentario').val('');
+            
+            $('#error_cali').html('');
+            
+            $('#error_comen').html('');
 
             cargar_comentarios(id);
 
-            $('#comentario').val('');
+            
           }
         }
+      }
       })
 
     });
@@ -247,7 +277,44 @@ window.addEventListener("DOMContentLoaded", function () {
         data: data_coment,
         successCallback: function (rta) {
 
-          alert(rta);
+           let divContainerModal = document.createElement("div");
+
+            divContainerModal.className = "modalWrapper";
+
+            let divModal = document.createElement("div");
+
+            divModal.className = "modal";
+
+            let textoInfo = document.createElement("p");
+
+            textoInfo.innerHTML = "Comentario eliminado.";
+
+            let confirmarBorrar = document.createElement("a");
+
+            confirmarBorrar.href = "#";
+
+            confirmarBorrar.innerHTML = "Ok";
+
+
+            let body = document.getElementsByTagName("body")[0];
+
+            body.appendChild(divContainerModal);
+
+            divContainerModal.appendChild(divModal);
+
+            divModal.appendChild(textoInfo);
+
+            divModal.appendChild(confirmarBorrar);
+            
+            
+            confirmarBorrar.addEventListener("click",function(){
+
+                divContainerModal.innerHTML = "";
+
+                body.removeChild(divContainerModal);
+
+            });
+            
           if (data && id) {
 
             cargar_comentarios(id);
