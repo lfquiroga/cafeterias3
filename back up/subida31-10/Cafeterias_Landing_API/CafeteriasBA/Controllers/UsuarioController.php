@@ -127,11 +127,12 @@ class UsuarioController {
      * funcion para la edicion del usuario.
      */
     public static function Update($data) {
-        $producto = Usuario::editarUsuario($data);
-        $salida = [
-                    'status' => 1,
-                    'data' => $producto
-        ];
+        
+        
+        $user = Usuario::editarUsuario($data);
+        
+        $salida = $user;
+        
         View::render($salida);
     }
 
