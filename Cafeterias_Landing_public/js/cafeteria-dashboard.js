@@ -49,7 +49,16 @@ window.addEventListener("DOMContentLoaded", function () {
         $('#titulo').html(cafeteriadata.nombre);
         
         var mapa = document.querySelector('.mapavercafeteria');
-        mapa.src = cafeteriadata.coordenadas_maps;
+		
+		if(cafeteriadata.coordenadas_maps != '')
+        {
+          mapa.src = cafeteriadata.coordenadas_maps;
+		  
+        }else
+        {
+          mapa.src = '../img/error-mapa.jpg';
+        }
+       // mapa.src = cafeteriadata.coordenadas_maps;
 
       } else {
         window.location = 'pageNotFound.php';
