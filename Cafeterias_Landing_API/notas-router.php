@@ -1,36 +1,1 @@
-<?php
-
-require "autoload.php";
-//header('Content-Type: application/json; charset=utf-8');
-$jsonData = file_get_contents('php://input');
-$postData = json_decode($jsonData, true);
-$method = $_SERVER['REQUEST_METHOD'];
-
-use \CafeteriasBA\Controllers\NotaController;
-
-/**
-	* Switch que analiza el method request. GET o DELETE y si tiene Id o no para pedir al controller la accion correspondiente.
-	*/
-switch($method)
-{
-		case 'GET':
-				if(isset($_GET['id']))
-				{
-						NotaController::getById($_GET['id']);
-				}
-				else
-				{
-						NotaController::getAll();
-				}
-				break;
-		case 'DELETE':
-				if(isset($_GET['id']))
-				{
-						//var_dump($_GET['id']);
-						NotaController::Delete($_GET['id']);
-				}else
-				{
-						//TODO: devolver error,
-				}
-				break;
-}
+<?phprequire "autoload.php";//header('Content-Type: application/json; charset=utf-8');$jsonData = file_get_contents('php://input');$postData = json_decode($jsonData, true);$method = $_SERVER['REQUEST_METHOD'];session_start();use CafeteriasBA\Core\View;use \CafeteriasBA\Controllers\CafeteriaController;use \CafeteriasBA\Controllers\MenuController;use  \CafeteriasBA\Controllers\NotaController;use \CafeteriasBA\Models\Menu;use CafeteriasBA\Models\Cafeteria;use \CafeteriasBA\Validation\Validator;/** * Switch que analiza el method request. GET o DELETE y si tiene Id o no para pedir al controller la accion correspondiente. */switch ($method) {        case 'POST':                if (isset($postData['crear'])) {                                        $data = [                    'titulo' => $postData['titulo'],                    'texto' => $postData['texto']                ];                             $validator = new Validator($data, [                    'titulo' => ['required', 'min:5', 'max:500'],                    'texto' => ['required', 'min:10', 'max:300']                ]);                if ($validator->errors) {                    $salida = [                        "error" => 1,                        "errores" => $validator->errors                    ];                    View::render($salida);                                    } else {                                    NotaController::Create($data);                                   }                    }                          if (isset($postData['datos_nota'])) {                       NotaController::getById($postData['id']);        }    case 'GET':        if (isset($_GET['id'])) {            NotaController::getById($_GET['id']);                    } else {            NotaController::getAll();        }        break;/*    case 'DELETE':        if (isset($_GET['id'])) {            //var_dump($_GET['id']);            NotaController::Delete($_GET['id']);        } else {            //TODO: devolver error,        }*/        break;}
