@@ -5,8 +5,7 @@ https://unsplash.com/search/photos/coffee
 RIPPING:
 http://www.tiendadecafe.com.ar/
 */
-
-
+
 *
 {
   font-size: 1em;
@@ -378,12 +377,12 @@ hr
 }
 .text-container p
 {
-  /*padding-bottom: 30px;*/
+  padding-bottom: 30px;
   font-weight: 400;
   line-height: 1.5em;
   display: inline-block;
   width: 70%;
-}.rowtxtstmapa #descripcion{padding-right:20px!important;margin-bottom:20px!important;}
+}
 .footer-landing
 {
   min-height: 277px;
@@ -712,8 +711,9 @@ form.register.move-left {
   letter-spacing: 2px;
 }
 .aboutus p
-{  margin: 0;  text-align: justify;
-}.contaboutussection{  margin-bottom:40px;}.contaboutussection p{  margin-bottom:20px;}
+{
+  margin: 0;
+}
 .aboutus{margin-top:40px;}
 .page-bg-wrapper b
 {
@@ -1117,15 +1117,7 @@ display: unset!important;
 .califyprecio .width250{ width: 250px!important;}
 
 .height20{height:20px!important;}
-
-.vercafeteriasection p {
-	text-align:justify;
-	width:100%;
-	box-sizing: border-box;
-	/*padding-right: 50px;*/
-	line-height: 1.5em;
-	/*margin-bottom:10px;*/
-	}
+.vercafeteriasection p {text-align:left; width:100%; padding:0px;line-height: 1.5em; margin-bottom:10px;} 
 
 .clearflt{clear:both;}
 .navegacionResumen{
@@ -1151,14 +1143,7 @@ display: unset!important;
 	padding:0px;
 }
 .rowtxtstmapa{margin-top:20px;}
-
-.rowcontainertxt{
-	margin-top: 80px;
-    border-top: 1px solid #eee;
-    box-sizing: border-box;
-    padding-top: 60px;
-	}
-
+.rowcontainertxt{margin-top:20px;}
 .txtaligncenter{text-align:center!important;}
 .margintop0{margin-top:0px;}
 .marginbottom0{margin-bottom:0px!important;}
@@ -1173,25 +1158,18 @@ display: unset!important;
 .starspoints{color:#FFC501; margin-left:2px;margin-right:2px;}
 .resenaUser .starspoints{font-size: 15px!important;}
 .detailcafe .horarios{
-	background-color: #705845;
-	margin: 0px;
-	padding: 16px;
-	float: right;
+	background-color: #ffc400;
+	margin: 5px;
+	padding: 16px; float: right;
 	width: 50%;
 }
 
 .detailcafe .horarios p{
 	margin: 0;
-	padding: 0;
-	text-align:left;
-	width: 100%;
-	/*text-shadow: 1px 1px 2px lightslategrey;*/
-    color: #fff;
-	font-weight: 500;
-	font-family: "Lato", Roboto, Arial;
+	padding: 0; text-align:left;	width: 100%; color:#fff;
 }
 .iconservicios{margin-right: 15px;}
-.mapavercafeteria{display:block; border:solid 1px #ccc; margin: 0 auto;}
+.mapavercafeteria{display:block; border:solid 1px #ccc; margin:5px 5px 5px 5px;}
 .tiraimgvercafeteria{width:100%;}
 .txtPromo{
 	margin: 0 !important;
@@ -1319,7 +1297,7 @@ display: unset!important;
 .bloqueComentarios .comentario {margin-bottom:10px;}
 
 .starresponcont{display:block;}
-.detailcafe .horarios{	width: 90%;}
+
 }
 
 .vermasbutton {
@@ -1352,7 +1330,7 @@ display: unset!important;
 .singlecommentgrp{background-color:#fff;padding:10px; color:#000!important;}
 .avatarcomment{width:160px; text-align:center!important;}
 .imgvatarcomment{width:100px;border-radius:50%;}
-.txtfichaavatarlabels{font-size:12px;padding:0px!important; margin:0px!important;}..avatarcomment .txtaligncenter {padding:0px!important; margin:0px!important;}
+.txtfichaavatarlabels{font-size:12px;}
 .commntuserbloq{padding-top: 20px;padding-bottom: 20px;}
 
 .eliminar_comentario,.ver_mas{
@@ -1397,52 +1375,13 @@ button:hover { outline:0 !important; }
 }
 .star{color:#e3cf7a;}/* Rating */.rating {	cursor: pointer;}.rating .rating-star {	display: inline-block;  position: relative;  padding-right: 5px;  margin-left: -5px;  color: #e3cf7a;}.rating .selected:before {  /*content: '\f005';*/       font-family: "Font Awesome 5 Free";font-weight: 400;-webkit-font-smoothing: antialiased;    display: inline-block;    font-style: normal;    font-variant: normal;    text-rendering: auto;    line-height: 1;content: "\f005"!important;  }/* Rating *//* Rating */
 
-#promos .col6 .promosC .promoContainer{
-	width: 100%;	border:0px!important;
-	background-color:#fff;
-	border-radius: 3px;
-	margin: 5px;
-	box-sizing: border-box;	-webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.26);	-moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.26);	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.26);	}	
-#promos .col6 .promosC div{
-	width: 100%;
-	border:solid 1px;
-	border-radius: 3px;
-	margin: 5px;
-	box-sizing: border-box;
-	}.descripcionPromo{height: 133px; overflow-y: auto;}.valorprecio{color:#fff!important;font-weight:bold!important;text-align: right!important;}.precioPromo{margin:0px!important;    background: #CC3139;}	
-.precioPromo,.descripcionPromo{ margin-left:0px!important;border:none!important;}
-#promos .col6 .promosC div .txtPromo h4{
-	text-align: center;
-	text-transform: uppercase;
-	color: #fff;
-	font-weight: 400;
-	margin-top: 10px;
-	letter-spacing: 0;
-	font-size: 18px;
-	
-	}
+#promos .col6 .promosC div{width: 100%;border:solid 1px;border-radius: 3px;}
+#promos .col6 .promosC div .txtPromo h4{text-align:center;text-transform: none!important;color:#fff;font-weight: 400;margin-top: 10px!important;}
+#promos .col6 .promosC div .txtPromo {padding: 1px!important; top: -1px; left: -2px; border-radius: 0px;}
+#promos .col6 .promosC div p{margin-left:4px;margin-right:4px;}
 
-#promos .col6 .promosC div .txtPromo {
-	padding: 1px!important;
-	top: 0px;
-	left: 0px;
-	border-radius: 0px;
-	}
+#promos .col6 .promosC {margin-bottom:10px;min-height: 250px;}
 
-#promos .col6 .promosC div p{
-	padding: 10px 20px;
-	margin: 0px auto;
-	}
-
-#promos .col6 .promosC{
-	margin-bottom:10px;
-	height: 250px;
-	margin: 0px auto;
-	}
-
-#promos h2{
-	margin-bottom: 30px;
-}
 
 
 
@@ -1869,10 +1808,10 @@ header .container-fluid .navbar-nav {
 .photostack nav span{    width: 20px; height: 20px;}
 
 .notes-and-products div.tile .content h3 {min-height: 100px;}
-/*
+
 .detailcafe .horarios{
 	width: 60%;
-}*/
+}
 
 .footer-landing {
     min-height: 206px;
