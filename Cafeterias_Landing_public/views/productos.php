@@ -87,6 +87,6 @@ include_once './header-public.php';
 <script src="../js/nav.js"></script>
 <script src="../js/register.js"></script>
 <script src="../js/login.js"></script>
-<script src="../js/productos.js"></script>
+<script src="../js/productos.js"></script><style>.navitem:nth-child(6) {  background-color: #91303a;    color: white;}</style>
 </body>
 </html>
