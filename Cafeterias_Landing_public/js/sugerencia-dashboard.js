@@ -548,7 +548,7 @@ window.addEventListener("DOMContentLoaded",function(){
 
                     tableHeader.className = "listado-oculto";
 
-                    pMensaje.innerHTML = 'No registramos ninguna sugerencia por parte de los usuarios en estos momentos. A penas se realize una, se mostrarán aquí.';
+                    pMensaje.innerHTML = 'No registramos ninguna sugerencia por parte de los usuarios en estos momentos. A penas se realize una, se mostrar&#225;n aqu&#237;.';
 
                     divContainer.appendChild(pMensaje);
 
