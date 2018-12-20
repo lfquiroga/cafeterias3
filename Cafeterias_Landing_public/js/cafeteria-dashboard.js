@@ -157,18 +157,19 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
           let errores_form = JSON.parse(rta);
-
-
+          
           if (typeof errores_form.errores.comentario !== 'undefined') {
-            $('#error_comen').append(errores_form.errores.comentario[0]);
+            
+            $('#error_comen').html(errores_form.errores.comentario[0]);
           } else {
             $('#error_comen').html('');
           }
 
-          if (typeof errores_form.errores.calificacion !== 'undefined' || typeof errores_form.errores.calificacion !== 'undefined') {
+          if (typeof errores_form.errores.calificacion !== 'undefined') {
 
             if (typeof errores_form.errores.calificacion !== 'undefined') {
-              $('#error_cali').append('Debes escoger una calificacion.');
+           
+              $('#error_cali').html('Debes escoger una calificacion.');
             } else {
               $('#error_cali').html('');
             }
