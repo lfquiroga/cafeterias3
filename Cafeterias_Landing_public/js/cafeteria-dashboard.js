@@ -163,7 +163,9 @@ window.addEventListener("DOMContentLoaded", function () {
             
             $('#error_comen').html(errores_form.errores.comentario[0]);
           } else {
+            
             $('#error_comen').html('');
+            
           }
 
           if (typeof errores_form.errores.calificacion !== 'undefined') {
