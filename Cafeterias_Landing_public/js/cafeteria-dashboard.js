@@ -155,9 +155,10 @@ window.addEventListener("DOMContentLoaded", function () {
         data: data,
         successCallback: function (rta) {
 
-
           let errores_form = JSON.parse(rta);
           
+          if(typeof errores_form.errores !== 'undefined'){
+            
           if (typeof errores_form.errores.comentario !== 'undefined') {
             
             $('#error_comen').html(errores_form.errores.comentario[0]);
@@ -173,7 +174,7 @@ window.addEventListener("DOMContentLoaded", function () {
             } else {
               $('#error_cali').html('');
             }
-            
+          }
           } else{
             
           if (data && id) {
