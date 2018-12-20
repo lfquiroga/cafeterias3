@@ -55,7 +55,7 @@ session_start();
   <header class="top-fixed" style="padding-top: 0px;"> 
 	<div class="topnav" id="myTopnav">
 	<div class="container1200max">
-	  <a class="logomainmnu" href="../index.php" ><img width="64" src="../img/logoCafeteriasBA.svg" alt="logoCafeteriasBA"></a>
+	  <a class="logomainmnu" href="../index.php" ><img width="64" src="../img/logoCafeteriasBAb.svg" alt="logoCafeteriasBA"></a>
 	  <a class="navitem" href="../index.php">Home</a>
 	  <a class="navitem" href="about_us.php">Quiénes Somos?</a>
 	  <a class="navitem" href="notas.php">Notas</a>
