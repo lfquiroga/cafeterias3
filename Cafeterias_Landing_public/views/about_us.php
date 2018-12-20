@@ -60,6 +60,6 @@ include_once './header-public.php';
 <script src="../js/ajax.js"></script>
 <script src="../js/nav.js"></script>
 <script src="../js/register.js"></script>
-<script src="../js/login.js"></script>
+<script src="../js/login.js"></script><style>.navitem:nth-child(3) {  background-color: #91303a;    color: white;}</style>
 </body>
 </html>
